@@ -4,7 +4,6 @@ pipeline {
     dockerImage = ''
   }
   agent any
-  def sonarScanner = tool name: 'shasonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
   stages {
     stage('Code checkout') {
       steps {
@@ -13,6 +12,7 @@ pipeline {
     }
     stage('Code Scan'){
       steps{
+        def sonarScanner = tool name: 'shasonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     withSonarQubeEnv(credentialsId: 'b1fd1aa2-b57a-47c1-a581-3dbc8306cae6') {
         sh "${sonarScanner}/bin/sonar-scanner"
     }
