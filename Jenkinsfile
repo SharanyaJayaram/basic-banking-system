@@ -1,10 +1,10 @@
 pipeline {
   environment {
-    def sonarScanner = tool name: 'shasonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     imagename = "sharanyajayaram/bankdocker"
     dockerImage = ''
   }
   agent any
+  def sonarScanner = tool name: 'shasonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
   stages {
     stage('Code checkout') {
       steps {
