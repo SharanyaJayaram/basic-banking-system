@@ -1,5 +1,6 @@
 pipeline {
   environment {
+    scannerHome = tool 'shasonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     imagename = "sharanyajayaram/bankdocker"
     dockerImage = ''
   }
@@ -11,9 +12,6 @@ pipeline {
       }
     }
     stage('Code Scan') {
-    environment {
-        scannerHome = tool 'shasonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-    }
     steps {
         withSonarQubeEnv(credentialsId: 'sonarid')  {
             sh "${scannerHome}/bin/sonar-scanner"
