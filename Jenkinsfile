@@ -13,7 +13,8 @@ pipeline {
     }
     stage('Code Scan') {
     steps {
-        withSonarQubeEnv(credentialsId: 'sonarid')  {
+      withSonarQubeEnv(installationName: 'shasonar', envOnly: true) {
+        //withSonarQubeEnv(credentialsId: 'sonarid')  {
             sh "${scannerHome}/bin/sonar-scanner"
         }
         
