@@ -15,7 +15,7 @@ pipeline {
         scannerHome = tool 'shasonar'
     }
     steps {
-        withSonarQubeEnv(credentialsId: 'b1fd1aa2-b57a-47c1-a581-3dbc8306cae6') {
+        withSonarQubeEnv(credentialsId: 'sonarid')  {
             sh "${scannerHome}/bin/sonar-scanner"
         }
         
