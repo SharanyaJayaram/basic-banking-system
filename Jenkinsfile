@@ -15,7 +15,7 @@ pipeline {
     steps {
       withSonarQubeEnv(installationName: 'shasonar',credentialsId: 'sonarid', envOnly: true) {
         //withSonarQubeEnv(credentialsId: 'sonarid')  {
-            sh "${scannerHome}/bin/sonar-scanner"
+            sh "${sonarScanner}/bin/sonar-scanner"
         }
         
     }
