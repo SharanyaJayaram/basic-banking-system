@@ -16,6 +16,7 @@ pipeline {
       withSonarQubeEnv(installationName: 'shasonar', credentialsId: 'sonarid', envOnly: true) {
         //withSonarQubeEnv(credentialsId: 'sonarid')  {
             sh "${sonarScanner}/bin/sonar-scanner"
+            //sh "/opt/sonar_scanner/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner -Dsonar.projectKey=develop -Dsonar.sources=. "
         }
         
     }
