@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    //scannerHome = tool 'shasonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+    def sonarScanner = tool name: 'shasonar,type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     imagename = "sharanyajayaram/bankdocker"
     dockerImage = ''
   }
