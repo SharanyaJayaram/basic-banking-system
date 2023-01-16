@@ -3,6 +3,7 @@ pipeline {
     imagename = "sharanyajayaram/bankdocker"
     dockerImage = ''
   }
+  def sonarScanner = tool name: 'shasonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
   agent any
   stages {
     stage('Code checkout') {
@@ -10,7 +11,6 @@ pipeline {
         checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'a8bd30ae-cf89-453a-a8d0-d2c06cfd9174', url: 'https://github.com/SharanyaJayaram/basic-banking-system.git']])
       }
     }
-    def sonarScanner = tool name: 'shasonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     stage('Code Scan'){
       steps{
         script{
