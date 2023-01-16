@@ -12,7 +12,7 @@ pipeline {
     }
     stage('Code Scan') {
     environment {
-        scannerHome = tool 'shasonar'
+        scannerHome = tool 'shasonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     }
     steps {
         withSonarQubeEnv(credentialsId: 'sonarid')  {
