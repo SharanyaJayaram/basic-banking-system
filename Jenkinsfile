@@ -42,5 +42,14 @@ pipeline {
 
       }
     }
+    stage('kubernetes') {
+        steps {
+            node("Kubernetes") {
+                sh """
+                kubectl get pods
+            """
+            }
+        }
+    }
   }
 }
