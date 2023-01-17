@@ -47,7 +47,7 @@ pipeline {
             //node("Kubernetes") {
               script{
                 sh """
-                kubectl create -f kube-pod.yamlpod
+                kubectl create -f kube-pod.yaml
                 kubectl get pods
                 kubectl get pods -o wide
             """
