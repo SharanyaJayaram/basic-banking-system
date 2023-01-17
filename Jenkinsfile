@@ -44,7 +44,7 @@ pipeline {
     }
     stage('kubernetes') {
         steps {
-            node("Kubernetes") {
+            //node("Kubernetes") {
               script{
                 sh """
                 kubectl create -f kube-pod.yamlpod
@@ -52,7 +52,7 @@ pipeline {
                 kubectl get pods -o wide
             """
               }
-            }
+            //}
         }
     }
   }
