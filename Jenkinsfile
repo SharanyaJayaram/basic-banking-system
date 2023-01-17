@@ -45,9 +45,11 @@ pipeline {
     stage('kubernetes') {
         steps {
             node("Kubernetes") {
+              script{
                 sh """
                 kubectl get pods
             """
+              }
             }
         }
     }
