@@ -49,7 +49,7 @@ pipeline {
             node("Kubes") {
               script{
                 sh """kubectl create namespace docker
-                kubectl create -f deployment.yml
+                kubectl create -f deployment.yaml
                 kubectl get pods -n docker
                 kubectl create -f service.yaml --namespace docker
                 kubectl get services --namespace docker"""
