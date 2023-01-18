@@ -54,7 +54,7 @@ pipeline {
                 kubectl create -f service.yaml --namespace docker
                 kubectl get services --namespace docker"""
                 
-            """
+            
               }
             }
         }
