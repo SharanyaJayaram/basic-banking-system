@@ -48,9 +48,12 @@ pipeline {
         steps {
             node("Kubes") {
               script{
-                sh """
-                kubectl get pods
-                kubectl get pods -o wide
+                sh """kubectl create namespace docker
+                kubectl create -f deployment.yml
+                kubectl get pods -n docker
+                kubectl create -f service.yaml --namespace docker
+                kubectl get services --namespace docker"""
+                
             """
               }
             }
