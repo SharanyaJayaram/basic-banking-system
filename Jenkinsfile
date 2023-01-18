@@ -36,6 +36,8 @@ pipeline {
           withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerhubPassword', usernameVariable: 'dockerhubUser')]) {
             sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPassword}"
             sh 'docker push sharanyajayaram/bankdocker:latest'
+            sh "docker pull sharanyajayaram/bankdocker:latest"
+            sh "docker run -d -t -p 3000:3000 --name projectcontainer sharanyajayaram/bankdocker:latest"
           }
 
 
