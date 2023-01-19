@@ -20,6 +20,13 @@ pipeline {
         
     }
 }
+    stage('Testing'){
+      steps{
+        script{
+               sh "npm run test"
+        }
+      }
+    }
       
  
 
