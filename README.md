@@ -5,7 +5,7 @@ This is a basic banking system created using Node.js and MongoDB database.
 
 Use below command to deploy a MongoDB Container
 
-docker run -d --name mongo -p 3306:3306 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=App123Password mongo
+docker run -d --name mongo -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=App123Password mongo
   
 Accessing Mongo DB using below command:
 
