@@ -8,8 +8,8 @@ labels:
 spec:
    replicas:2
    containers:
-   - name: projectcontainer
-     image: sharanyajayaram/bankdockers:latest
+   - name: bankprojectcontainerrrr..
+     image: sharanyajayaram/bankdocker:latest
      imagePullPolicy: Always
      ports:
      - containerPort: 3000
