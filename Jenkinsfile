@@ -45,7 +45,7 @@ pipeline {
             sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPassword}"
             sh 'docker push sharanyajayaram/bankdocker:latest'
             sh "docker pull sharanyajayaram/bankdocker:latest"
-            sh "docker run -d -t -p 3000:3000 --name bankprojectcontainerrr. sharanyajayaram/bankdocker:latest"
+            sh "docker run -d -t -p 3000:3000 --name bankprojectcontainerrrr. sharanyajayaram/bankdocker:latest"
           }
 
 
@@ -56,7 +56,7 @@ pipeline {
         steps {
             node("Kubes") {
               script{
-                sh '''kubectl apply -f deployment.yml 
+                sh '''kubectl apply -f deployment.yaml 
                       kubectl get pods
                       kubectl get pods -o wide'''
                 //sh """kubectl create namespace dockerr
