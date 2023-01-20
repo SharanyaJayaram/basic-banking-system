@@ -45,7 +45,7 @@ pipeline {
             sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPassword}"
             sh 'docker push sharanyajayaram/bankdocker:latest'
             sh "docker pull sharanyajayaram/bankdocker:latest"
-            sh "docker run -d -t -p 3000:3000 --name bankprojectcontainerrrrrrr.. sharanyajayaram/bankdocker:latest"
+            sh "docker run -d -t -p 3000:3000 --name bosch sharanyajayaram/bankdocker:latest"
           }
 
 
@@ -57,7 +57,7 @@ pipeline {
             node("Kubes") {
               script{
                 sh """
-              kubectl create deployment kubernetes-bootcamp1 --image=docker.io/sharanyajayaram/bankprojectcontainerrrrrrr..:latest --port=8090
+              kubectl create deployment kubernetes-bootcamp1 --image=docker.io/sharanyajayaram/bosch:latest --port=8090
                        kubectl get pods """
                 //sh kubectl create namespace dockerr
                 //kubectl create -f deployment.yaml
